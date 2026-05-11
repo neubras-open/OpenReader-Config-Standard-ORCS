@@ -356,15 +356,106 @@ You can contribute by:
 
 ## License
 
-This project should use an open source license that allows broad adoption by manufacturers and software developers.
+ORCS is intended to be an open and commercially usable standard.
 
-Suggested licenses:
+The recommended licensing approach for this project is a custom attribution-based specification license, inspired by permissive open standards models, but with a specific attribution requirement for the ORCS USB configuration interface.
 
-* MIT License
-* Apache License 2.0
-* BSD 3-Clause License
+This license is designed to allow broad adoption while preserving Neubras as the original creator and maintainer of the ORCS standard.
 
-The final license should be chosen according to the project goals and contribution model.
+### Proposed license name
+
+```text
+ORCS Attribution License 1.0
+```
+
+### Proposed license text
+
+```text
+ORCS Attribution License 1.0
+
+Copyright (c) Neubras.
+
+Permission is hereby granted, free of charge, to any person or organization obtaining a copy of the OpenReader Config Standard (ORCS) specification to use, implement, reproduce, distribute, publish, reference, and create compatible implementations of the specification for commercial and non-commercial purposes, subject to the conditions below.
+
+1. Attribution
+
+Any implementation that claims compatibility with ORCS must preserve attribution to Neubras as the original creator and maintainer of the ORCS standard.
+
+2. USB configuration descriptor attribution
+
+Devices that implement the ORCS USB configuration mode must include a clear reference to Neubras in the USB descriptor associated with the ORCS configuration interface.
+
+Recommended descriptor strings include one of the following:
+
+"ORCS by Neubras"
+"OpenReader Config Standard - Neubras"
+"ORCS Configuration Interface - Neubras"
+
+This attribution requirement applies only to the ORCS configuration interface.
+
+3. Manufacturer independence
+
+This license does not require manufacturers to change their own company name, product name, brand, enclosure, hardware design, firmware ownership, commercial identity, normal operation USB descriptors, or normal operation VID/PID.
+
+Manufacturers may continue to use their own branding and device identification in normal operation mode.
+
+4. No hardware restriction
+
+ORCS does not define or restrict hardware design.
+
+Any manufacturer may implement ORCS using its own electronics, firmware, RFID/NFC chipset, enclosure, communication interface, and product architecture.
+
+5. Commercial use
+
+Commercial use is explicitly allowed.
+
+Manufacturers, integrators, software vendors, and service providers may use ORCS in commercial products, commercial software, embedded devices, configuration tools, access control systems, industrial systems, and related solutions.
+
+6. Modifications and extensions
+
+Implementations may add vendor-specific parameters, extensions, or private features, provided that they do not falsely represent those extensions as mandatory parts of the official ORCS specification.
+
+If a modified version of the ORCS specification is published, it must clearly state that it is modified and must not be presented as the official ORCS specification unless approved by Neubras.
+
+7. No warranty
+
+The ORCS specification is provided "as is", without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.
+
+In no event shall Neubras or contributors be liable for any claim, damages, or other liability arising from the use or implementation of this specification.
+```
+
+### License rationale
+
+This license model was chosen because ORCS is not only software. It is mainly a technical specification for device configuration interoperability.
+
+Traditional software licenses such as MIT, BSD, or Apache 2.0 are excellent for source code, libraries, SDKs, and tools, but they do not directly address the need for device-level attribution inside a USB configuration descriptor.
+
+Creative Commons licenses are useful for documentation, but some variants, such as CC BY-NC-ND 4.0, are not suitable for this project because they restrict commercial use and modifications.
+
+The ORCS Attribution License 1.0 is better aligned with the project goals because it:
+
+* Allows commercial use.
+* Allows implementation by different manufacturers.
+* Does not restrict hardware design.
+* Does not require manufacturers to rebrand their products.
+* Requires attribution to Neubras only in the ORCS configuration interface.
+* Protects the identity of the official ORCS standard.
+* Allows vendor-specific extensions without breaking compatibility.
+
+### Recommended licensing split
+
+Because the project may include specifications, examples, schemas, tools, and reference software, the repository may use more than one license:
+
+| Project part                          | Recommended license                       |
+| ------------------------------------- | ----------------------------------------- |
+| ORCS specification documents          | ORCS Attribution License 1.0              |
+| JSON schemas and protocol definitions | ORCS Attribution License 1.0              |
+| Example configuration files           | ORCS Attribution License 1.0 or CC BY 4.0 |
+| Reference software tools              | Apache License 2.0 or MIT License         |
+| SDKs and libraries                    | Apache License 2.0 or MIT License         |
+| Documentation website                 | CC BY 4.0 or ORCS Attribution License 1.0 |
+
+This separation allows the standard itself to preserve the required Neubras attribution while keeping software tools easy to adopt in commercial and open source ecosystems.
 
 ---
 
